@@ -1,0 +1,30 @@
+package suitea;
+
+import java.io.IOException;
+
+import org.openqa.selenium.By;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import baseClass.TestBaseClass;
+
+public class SakraWorld extends TestBaseClass{
+	
+	@BeforeTest
+	public void init() throws IOException {
+		launchBrowser();
+	}
+	
+	@Test
+	public void appointmentTest() throws IOException {
+		
+		
+		
+		driver.get(prop.getProperty("url"));
+		
+		Thread.sleep(3000);
+		
+		driver.findElement(By.linkText(prop.getProperty("doc_name"))).click();;
+	}
+
+}

@@ -1,0 +1,51 @@
+package suitea;
+
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import baseClass.TestBaseClass;
+import sun.util.calendar.LocalGregorianCalendar.Date;
+
+public class TesClass extends TestBaseClass{
+	
+	@BeforeTest
+	public void init() throws IOException {
+		launchBrowser();
+	}
+
+	@Test
+	public void testtt() throws InterruptedException {
+		driver.get(prop.getProperty("url"));
+
+		Thread.sleep(3000);
+
+		// click on doctor name
+		driver.findElement(By.linkText(prop.getProperty("doc_name"))).click();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		Thread.sleep(5000);
+		
+		WebElement element = driver.findElement(By.xpath("//*[@id='hv-vc-appointment-pop-up23']/div/div/div[2]/div/p[2]/button[2]"));
+		WebDriverWait wait = new WebDriverWait(driver,30);
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+		element.click();
+		
+		Date d = new Date();
+		System.out.println(d.toString());
+		String date_select = "25-06-2023"
+		
+		String monthYearShown = driver.findElement(By.cssSelector("div.ui-datepicker-title")).getText();
+		System.out.println(monthYearShown);
+		
+		SimpleDateFormat sd = new SimpleDateFormat("dd-MM-yyyy");
+		
+	}
+
+}

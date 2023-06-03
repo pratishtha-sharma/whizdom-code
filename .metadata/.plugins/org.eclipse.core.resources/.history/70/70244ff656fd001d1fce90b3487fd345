@@ -1,0 +1,23 @@
+browser = chrome
+
+url = https://www.sakraworldhospital.com/request-appointment
+
+doc_name = Dr. Rani Premkumar
+
+#Locators
+name_id = video_name
+
+name= input#video_name
+
+email= input#video_email
+
+mobile_number= input#video_mobile
+
+
+
+#Data
+first_name = Pratishtha
+
+emailId= pratishtha@mailinator.com
+
+phone_number = 9874563210

@@ -1,0 +1,53 @@
+browser = chrome
+
+url = https://www.sakraworldhospital.com/request-appointment
+
+doc_name = Dr. Rani Premkumar
+
+#Locators
+name_id = video_name
+
+name= input#video_name
+
+email= input#video_email
+
+mobile_number= input#video_mobile
+
+calendar = //input[@id='video_datebirth']
+
+#year = //select[@data-handler='selectYear']
+#year = //select[@class='ui-datepicker-year']
+year = //*[@id='ui-datepicker-div']/div/div/select[2]
+
+month = //*[@id='ui-datepicker-div']/div/div/select[1]
+
+date = div.ui-state-default
+
+radio1_yes = //label[@id='yes-block1']
+
+radio2_no = //label[@id='no-block1']
+
+uhid = //input[@id='video_uhid']
+
+#preferred date 1
+preferDate1 = //input[@id='video_prefdate1']
+month_year = div.ui-datepicker-title
+cal_forwardButton = //span[contains(text(),'Next')]
+
+
+#Data
+first_name = Pratishtha
+
+emailId= pratishtha@mailinator.com
+
+phone_number = 9874563210
+
+uhid_val = 12345678
+
+month1 = Mar
+
+year1 = 1993
+
+date1 = 29
+
+preferDate1_select = 25-06-2023

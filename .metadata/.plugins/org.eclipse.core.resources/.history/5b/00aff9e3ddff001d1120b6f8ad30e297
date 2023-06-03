@@ -1,0 +1,22 @@
+package suitea;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.testng.annotations.Test;
+
+public class TesClass {
+	
+	@Test
+	public void testtt() {
+driver.get(prop.getProperty("url"));
+		
+		Thread.sleep(3000);
+		
+		//click on doctor name
+		driver.findElement(By.linkText(prop.getProperty("doc_name"))).click();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		Thread.sleep(5000);
+	}
+
+}

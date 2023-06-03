@@ -1,0 +1,10 @@
+package WebDriver.Commands;
+
+public class multipleExtraction {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

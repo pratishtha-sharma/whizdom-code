@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 elements to &apos;Commands/src/main/java&apos;&#x0D;&#x0A;- Original project: &apos;ProjectStructure&apos;&#x0D;&#x0A;- Destination element: &apos;Commands/src/main/java&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     baseClass.TestBaseClass.java&#x0D;&#x0A;     globalProp.properties" description="Copy elements" destination="=Commands/src\/main\/java" element1="src/test/java/baseClass/globalProp.properties" element2="/src\/test\/java&lt;baseClass{TestBaseClass.java" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1684606301537" units="1" version="1.0"/>
+</session>

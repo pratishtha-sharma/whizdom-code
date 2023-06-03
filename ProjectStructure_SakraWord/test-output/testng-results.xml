@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="23147" started-at="2023-06-01T00:31:49 IST" finished-at="2023-06-01T00:32:12 IST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="23147" started-at="2023-06-01T00:31:49 IST" finished-at="2023-06-01T00:32:12 IST">
+      <class name="suitea.SakraWorld">
+        <test-method status="PASS" signature="init()[pri:0, instance:suitea.SakraWorld@7f13d6e]" name="init" is-config="true" duration-ms="2986" started-at="2023-06-01T00:31:49 IST" finished-at="2023-06-01T00:31:52 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="appointmentTest()[pri:0, instance:suitea.SakraWorld@7f13d6e]" name="appointmentTest" duration-ms="20119" started-at="2023-06-01T00:31:52 IST" finished-at="2023-06-01T00:32:12 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- appointmentTest -->
+      </class> <!-- suitea.SakraWorld -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

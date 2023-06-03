@@ -1,0 +1,20 @@
+package suitea;
+
+import java.io.IOException;
+
+import org.testng.annotations.Test;
+
+import baseClass.TestBaseClass;
+
+public class SakraWorld extends TestBaseClass{
+	
+	@Test
+	
+	public void appointmentTest() throws IOException {
+		
+		
+		launchBrowser();
+		driver.get(prop.getProperty("url"));
+	}
+
+}

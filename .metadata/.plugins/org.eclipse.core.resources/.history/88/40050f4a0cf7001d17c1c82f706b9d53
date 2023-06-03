@@ -1,0 +1,83 @@
+package WebDriver.Commands;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.apache.http.client.fluent.Request;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.asserts.SoftAssert;
+
+public class cnnMoreStories {
+	
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		
+		System.setProperty("webdriver.chrome.driver", "F:\\Automation work\\chromedriver_win32 (1)\\chromedriver.exe");
+
+		// to solve the websocket problem
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--remote-allow-origins=*");
+		options.addArguments("--disable-notifications");
+		WebDriver driver = new ChromeDriver(options);
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		//driver.get("https://edition.cnn.com/"); // wait for the page to load
+		driver.navigate().to("https://edition.cnn.com/"); //does not wait for complete page to load, find element as soon as it appears
+		
+		//WebElement outerBox = driver.findElement(By.xpath("/html/body/div[1]/section[3]/section/div/section/div/div/div/div[3]/div/div[1]/div[1]/div/div[2]/div/div[3]/div/div"));
+		//List<WebElement> links = outerBox.findElements(By.xpath("//div[@class='card container__item container__item--type-section container_lead-plus-headlines__item container_lead-plus-headlines__item--type-section ']/a"));
+		
+//		List<WebElement> links = driver.findElements(By.xpath("/html/body/div[1]/section[3]/section/div/section/div/div/div/div[3]/div/div[1]/div[1]/div/div[2]/div/div[3]/div/div/div/a"));
+//		System.out.println("Number of links in this are-> "+links.size());
+		
+		
+		
+//		for (int i = 0; i < links.size(); i++) {
+//			System.out.println(links.get(i).getText());
+//			Thread.sleep(1000);
+//			links.get(i).click(); //this throws stale element exception as it moves to next page and the value of i is lost as we moved to the next page
+//			// and coming back to same page from below line would not get the value of i which we have already used.
+//			// so we will extract the value of toplinks again.
+//			System.out.println(driver.getTitle());
+//			Thread.sleep(2000);
+//			driver.get("https://edition.cnn.com/"); 
+//			//driver.navigate().back();
+//			System.out.println("-------------------------------------------------------------------------");
+//			
+//			//outerBox = driver.findElement(By.xpath("/html/body/div[1]/section[3]/section/div/section/div/div/div/div[3]/div/div[1]/div[1]/div/div[2]/div/div[3]/div/div"));
+//			//links = outerBox.findElements(By.tagName("div"));
+//			links = driver.findElements(By.xpath("/html/body/div[1]/section[3]/section/div/section/div/div/div/div[3]/div/div[1]/div[1]/div/div[2]/div/div[3]/div/div/div/a"));
+//
+//		}
+		
+		
+		//way 2 of doing the above thing by dividing the xpath as above gives stale element
+		String part1= "/html/body/div[1]/section[3]/section/div/section/div/div/div/div[3]/div/div[1]/div[1]/div/div[2]/div/div[";
+		String part2= "]/div/div/div/a";
+		
+		for(int i=1; i<=7; i++) {
+			String text = driver.findElement(By.xpath(part1+i+part2)).getText();
+			System.out.println(text);
+			Thread.sleep(1000);
+			driver.findElement(By.xpath(part1+i+part2)).click(); 
+			//stale element error will not come as we are not pre extracting anything before loop we are doing everything inside loop
+			System.out.println(driver.getTitle());
+			Thread.sleep(2000);
+			driver.get("https://edition.cnn.com/"); 
+			//driver.navigate().back();
+			System.out.println("-------------------------------------------------------------------------");
+			
+			//outerBox = driver.findElement(By.xpath("/html/body/div[1]/section[3]/section/div/section/div/div/div/div[3]/div/div[1]/div[1]/div/div[2]/div/div[3]/div/div"));
+			//links = outerBox.findElements(By.tagName("div"));
+			
+		}
+		
+
+	}
+
+}

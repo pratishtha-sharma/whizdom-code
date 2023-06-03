@@ -1,0 +1,64 @@
+package testbase;
+
+import org.testng.ITestContext;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+
+import reports.ExtentManager;
+
+public class testBase {
+
+	
+	public ExtentReports reports;
+	public ExtentTest test;
+	public String browser;
+	
+	@BeforeMethod(alwaysRun = true) //as there are groups in test the before method did not get run when groups tag is run so add this to make sure it also runs
+	public void init(ITestContext con, ITestResult result) {
+		reports = ExtentManager.getReports();
+		//System.out.println(result.getMethod().getMethodName().toUpperCase()); // to get name of class which is being run
+		
+		test = reports.createTest(result.getMethod().getMethodName().toUpperCase());
+		result.setAttribute("reporter", test); //test here is the testcase
+		
+		//browser = con.getCurrentXmlTest().getParameter("browser"); // to get the parameter from the xml using ITestContext
+		   //but this will run only when we want to run all testcase in same browser. To run few case in chrome and few in another browser we need to change logic
+		//System.out.println("Browser name is: "+browser);
+		
+		//String groupName[] = con.getAllTestMethods()[0].getGroups();
+		String groupName[] = con.getAllTestMethods()[0].getGroups();
+		String browsergrp = "";
+		for (String gn :groupName) {
+			if(gn.startsWith("browsergroup")) {
+				browsergrp= gn;
+				break;
+			}
+		}
+		// here we have found the browser group present in the test
+		System.out.println("*******************Name of browser group is= "+browsergrp);
+		
+		//now we will compare the group name of test with one present in testng xml and run test in that browser
+		browser = con.getCurrentXmlTest().getParameter(browsergrp); // we got the parameter value here and based on this we will open test in the browser
+		System.out.println("Name of browser to run test is= " + browser);
+		
+	}
+	
+	
+	@AfterMethod(alwaysRun = true)
+	public void quit() {
+		reports.flush();	
+	}
+	
+	public void log(String msg) {
+		System.out.println(msg);
+		test.log(Status.INFO, msg);
+	}
+	
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="855" started-at="2023-04-09T22:28:28 IST" finished-at="2023-04-09T22:28:29 IST">
+    <groups>
+    </groups>
+    <test name="Login Test" duration-ms="783" started-at="2023-04-09T22:28:28 IST" finished-at="2023-04-09T22:28:29 IST">
+      <class name="Extent.Reports.LoginTest">
+        <test-method status="PASS" signature="init()[pri:0, instance:Extent.Reports.LoginTest@5e853265]" name="init" is-config="true" duration-ms="312" started-at="2023-04-09T22:28:28 IST" finished-at="2023-04-09T22:28:29 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="login()[pri:0, instance:Extent.Reports.LoginTest@5e853265]" name="login" duration-ms="18" started-at="2023-04-09T22:28:29 IST" finished-at="2023-04-09T22:28:29 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:Extent.Reports.LoginTest@5e853265]" name="afterTest" is-config="true" duration-ms="406" started-at="2023-04-09T22:28:29 IST" finished-at="2023-04-09T22:28:29 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- Extent.Reports.LoginTest -->
+    </test> <!-- Login Test -->
+    <test name="Reg Test" duration-ms="38" started-at="2023-04-09T22:28:29 IST" finished-at="2023-04-09T22:28:29 IST">
+      <class name="Extent.Reports.RegTest">
+        <test-method status="PASS" signature="init()[pri:0, instance:Extent.Reports.RegTest@15d0c81b]" name="init" is-config="true" duration-ms="0" started-at="2023-04-09T22:28:29 IST" finished-at="2023-04-09T22:28:29 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="login()[pri:0, instance:Extent.Reports.RegTest@15d0c81b]" name="login" duration-ms="11" started-at="2023-04-09T22:28:29 IST" finished-at="2023-04-09T22:28:29 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:Extent.Reports.RegTest@15d0c81b]" name="afterTest" is-config="true" duration-ms="19" started-at="2023-04-09T22:28:29 IST" finished-at="2023-04-09T22:28:29 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- Extent.Reports.RegTest -->
+    </test> <!-- Reg Test -->
+  </suite> <!-- Suite -->
+</testng-results>
