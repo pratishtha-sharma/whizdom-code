@@ -26,6 +26,7 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="com.POMProject"/>
 			<item value="com.RawTestNgProject"/>
 			<item value="Extent.Reports"/>
 			<item value="testNg.NewProjectTestNg"/>
@@ -40,6 +41,7 @@
 			<item value="testNg"/>
 		</list>
 		<list key="artifactId">
+			<item value="POMProject"/>
 			<item value="RawTestNgProject"/>
 			<item value="Reports"/>
 			<item value="NewProjectTestNg"/>

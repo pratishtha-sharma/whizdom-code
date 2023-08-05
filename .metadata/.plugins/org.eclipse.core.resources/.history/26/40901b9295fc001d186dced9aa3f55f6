@@ -1,8 +1,0 @@
-browser = chrome
-
-url = https://www.sakraworldhospital.com/request-appointment
-
-doc_name = Dr. Rani Premkumar
-
-name= input#video_name
-
